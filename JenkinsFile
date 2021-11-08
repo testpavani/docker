@@ -1,25 +1,5 @@
-pipeline { 
-    environment { 
-    dockerImage = '' 
-    }
-    agent any 
-    stages { 
-        stage('Cloning our Git') { 
-            steps { 
-				sh " "
-            }
-        } 
-        stage('Building our image') { 
-            steps {
-                script { 
-                    dockerImage = docker.build
-                }
-            } 
-        }
-        stage('Deploy our image') { 
-            steps {
-				sh " "
-                    }
-                } 
-            }
-       } 
+node {
+
+        def customImage = docker.build("testpavani/docker")
+
+}
