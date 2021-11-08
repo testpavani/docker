@@ -1,18 +1,29 @@
-node {    
-      def app     
-      stage('Clone repository') {               
-             
-            checkout scm    
-      }     
-      stage('Build image') {         
-       
-
-            sh "build completed"
-       }     
-      stage('Test image') {           
-            app.inside {            
-             
-             sh 'echo "Tests passed"'        
-            }    
-        }  
+pipeline { 
+    environment { 
+    }
+    agent any 
+    stages { 
+        stage('Cloning our Git') { 
+            steps { 
+				sh " "
+            }
+        } 
+        stage('Building our image') { 
+            steps { 
+                sh ""
+            } 
         }
+        stage('Deploy our image') { 
+            steps {
+				sh " "
+                    }
+                } 
+            }
+        } 
+        stage('Cleaning up') { 
+            steps { 
+                sh " " 
+            }
+        } 
+    }
+}
