@@ -10,8 +10,10 @@ pipeline {
             }
         } 
         stage('Building our image') { 
-            steps { 
-		dockerImage = docker.build  
+            steps {
+                script { 
+                    dockerImage = docker.build
+                }
             } 
         }
         stage('Deploy our image') { 
