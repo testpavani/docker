@@ -1,7 +1,8 @@
 # set base image (host OS)
 FROM python:3.8
-ENV HTTP_PROXY <HTTP_PROXY>
-ENV HTTPS_PROXY <HTTPS_PROXY>
+RUN echo HTTP_PROXY = http://10.232.233.70:8080/
+RUN echo HTTPS_PROXY = http://10.232.233.70:8080/
+
 # set the working directory in the container
 WORKDIR /code
 
