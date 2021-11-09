@@ -1,9 +1,5 @@
 node {
- stage('Initialize'){
-        def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-    }
-    
+  
     stage('build image'){
         def customImage = docker.build("testpavani/docker")
         
