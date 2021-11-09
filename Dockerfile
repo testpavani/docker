@@ -1,19 +1,8 @@
-# set base image (host OS)
-FROM python:3.8
-RUN echo HTTP_PROXY = "http://10.232.233.70:8080/"
-RUN echo HTTPS_PROXY = "http://10.232.233.70:8080/"
+#FROM - Image to start building on.
+FROM ubuntu:14.04
 
-# set the working directory in the container
-WORKDIR /code
+#RUN - Runs a command in the container
+RUN echo "Hello world" > /tmp/hello_world.txt
 
-# copy the dependencies file to the working directory
-COPY requirements.txt .
-
-# install dependencies
-RUN pip install -r requirements.txt
-
-# copy the content of the local src directory to the working directory
-COPY src/ .
-
-# command to run on container start
-CMD [ "python", "./server.py" ]
+#CMD - Identifies the command that should be used by default when running the image as a container.
+CMD ["cat", "/tmp/hello_world.txt"]
